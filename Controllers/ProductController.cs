@@ -26,7 +26,7 @@ namespace CSharpTest.Controllers {
             // Log
             SqlConnection connection = new SqlConnection (ConnectionString);
             connection.Open ();
-            string sql = "INSERT INTO devtest.SearchRequest (Rid, Search, SuccessInd, Hits) VALUES ('" + new Random ().Next () + "',' " + q + "','Y','1')";
+            string sql = $"INSERT INTO devtest.SearchRequest (Rid, Search, SuccessInd, Hits) VALUES ('{new Random ().Next ()}','{q}','Y','1')";
             SqlCommand command = new SqlCommand (sql, connection);
             command.ExecuteNonQuery ();
 
